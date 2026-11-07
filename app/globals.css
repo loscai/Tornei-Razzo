@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-razzo-bg: #070a14;
+  --color-razzo-panel: #0e1424;
+  --color-razzo-cyan: #22d3ee;
+  --color-razzo-orange: #ff7a1a;
+  --color-razzo-win: #34d399;
+  --color-razzo-loss: #f43f5e;
+
+  --animate-fade-in: fade-in 0.25s ease-out both;
+  --animate-fade-out: fade-out 0.2s ease-in both;
+  --animate-pop-in: pop-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-pop-out: pop-out 0.2s ease-in both;
+  --animate-unlock: unlock 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-glow: glow 2.4s ease-in-out infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-trophy: trophy 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-shine: shine 3s linear infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(16px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes pop-out {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.96); }
+  }
+  @keyframes unlock {
+    0% { opacity: 0.3; transform: scale(0.94); filter: brightness(2); }
+    100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 0 1px rgb(34 211 238 / 0.5), 0 0 18px rgb(34 211 238 / 0.25); }
+    50% { box-shadow: 0 0 0 1px rgb(34 211 238 / 0.9), 0 0 32px rgb(34 211 238 / 0.5); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes trophy {
+    0% { opacity: 0; transform: scale(0.3) rotate(-12deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+  }
+  @keyframes shine {
+    from { background-position: 200% center; }
+    to { background-position: -200% center; }
+  }
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-razzo-bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgb(34 211 238 / 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgb(255 122 26 / 0.1), transparent),
+    linear-gradient(rgb(255 255 255 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.025) 1px, transparent 1px);
+  background-size: auto, auto, 40px 40px, 40px 40px;
+  background-attachment: fixed;
+}
+
+/* Nasconde le frecce degli input numerici */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.text-shine {
+  background: linear-gradient(90deg, #fff 0%, #22d3ee 25%, #fff 50%, #ff7a1a 75%, #fff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shine);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
