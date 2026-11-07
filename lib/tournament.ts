@@ -5,6 +5,7 @@ export const RANKS = [
   { id: "bronze", label: "Bronze", color: "#cd7f32" },
   { id: "silver", label: "Silver", color: "#c0c7d1" },
   { id: "gold", label: "Gold", color: "#f5c542" },
+  { id: "platinum", label: "Platinum", color: "#22d3ee" },
   { id: "diamond", label: "Diamond", color: "#5ec8ff" },
   { id: "champion", label: "Champion", color: "#b77bff" },
   { id: "grand-champion", label: "Grand Champion", color: "#ff4d6d" },
