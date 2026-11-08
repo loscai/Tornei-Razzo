@@ -1,4 +1,5 @@
 import { Inter, Orbitron } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", weight: ["500", "700", "900"] });
@@ -12,7 +13,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="description" content="Tracker interattivo del tabellone dei Tornei Lega del Razzo." />
         <meta name="theme-color" content="#070a14" />
       </head>
-      <body suppressHydrationWarning className="min-h-dvh font-sans text-slate-100 antialiased">{children}</body>
+      <body suppressHydrationWarning className="min-h-dvh font-sans text-slate-100 antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
