@@ -1,5 +1,6 @@
 import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", weight: ["500", "700", "900"] });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
