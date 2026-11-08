@@ -9,8 +9,6 @@ npm install
 npm run dev
 ```
 
-Apri http://localhost:3000. In sviluppo, se `ADMIN_PASSWORD` non è impostata, la password admin predefinita è `admin`.
-
 ## Nuove Funzionalità: Modalità e Compagni di Squadra (Mate)
 
 1. **Modalità di Gioco Predefinite e Personalizzate:**
